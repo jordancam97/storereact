@@ -1,9 +1,21 @@
-.flexDirectionRow {
+.row {
   flex-direction: row;
 }
 
-.displayInlineFlex {
-  display: inline-flex;
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.justify-content-center{
+  justify-content: center;
 }
 
 .displayFlexEnd {
