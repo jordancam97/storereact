@@ -95,7 +95,8 @@
 /* Home */
 .boxHome{
   padding: 10px 0px;
-  padding-top:130px
+  padding-top:130px;
+  flex-direction: row;
 }
 
 .boxProducts{
@@ -116,6 +117,7 @@
 
 .column img{
   margin-top: 5px;
+  border-radius: 25px !important;
 }
 
 .column_button{
@@ -127,13 +129,27 @@
 
 .column_button:hover{
  border-radius: 25px !important;
+ opacity: 0.6;
  
 }
 
-.column_button img:hover{
-  border-radius: 25px !important;
- opacity: 0.6;
+.textChoose {
+  padding-top: 14px;
 }
+
+.pLeft{
+  width: 60%;
+}
+
+.pRight{
+  width: 40%;
+}
+
+.textDirection::before{
+  content:"on the left";
+}
+
+
 
 
 /* End Home */
@@ -158,17 +174,25 @@
   color: #008fcc
 }
 
+.text-opacity{
+  color: #929292
+}
+
 /* fuentes */
 .font-bold{
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .font-medium{
-  font-weight: medium;
+  font-weight: 500;
 }
 
 .font-light{
-  font-weight: light;
+  font-weight: 400;
+}
+
+.font-normal{
+  font-weight: 300;
 }
 
 

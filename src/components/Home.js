@@ -45,8 +45,8 @@ const Home = () => {
           <div className="boxCart_amount">25.50</div>
         </button>
       </div>
-      <div className="w-100 d-flex row boxHome">
-        <div className="w-60 boxProducts">
+      <div className="w-100 d-flex boxHome">
+        <div className="pLeft boxProducts">
           <div className="font-bold boxHome_title text-blue">Store</div>
           <div className="w-100 d-flex row flex-wrap">
             <div className="column">
@@ -149,10 +149,45 @@ const Home = () => {
                 />
               </button>
             </div>
+
+            <div className="column">
+              <button className="column_button">
+                <img
+                  className="objectFit w-100"
+                  src={require("../assets/img/productDetodito.webp")}
+                  alt="Product"
+                />
+              </button>
+
+              <button className="column_button">
+                <img
+                  className="objectFit w-100"
+                  src={require("../assets/img/productAlqueria.webp")}
+                  alt="Product"
+                />
+              </button>
+
+              <button className="column_button">
+                <img
+                  className="objectFit w-100"
+                  src={require("../assets/img/productMilo.webp")}
+                  alt="Product"
+                />
+              </button>
+
+              <button className="column_button">
+                <img
+                  className="objectFit w-100"
+                  src={require("../assets/img/productAlqueria.webp")}
+                  alt="Product"
+                />
+              </button>
+            </div>
           </div>
         </div>
-        <div className="w-40 boxProducts">
+        <div className="pRight boxProducts">
           <div className="font-bold boxHome_title text-blue"></div>
+          <div className="textChoose font-medium text-opacity">Please choose a product <span className="textDirection"></span></div>
         </div>
       </div>
     </>
