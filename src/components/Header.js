@@ -1,8 +1,9 @@
 import React from "react";
+import { BsCart4 } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <div className="bg-red boxHeader d-flex row justify-content-between align-items-center w-100">
+    <div className="boxHeader d-flex row justify-content-between align-items-center w-100">
       <div className="h-100"> 
         <img
           className="objectFit h-100"
@@ -10,9 +11,13 @@ const Header = () => {
           alt=""
         />
       </div>
-      <div className="colorPru">
-        hola
-      </div>
+      <button className="d-flex row boxCart border-radius align-items-center button">
+        
+        <BsCart4 size={20}/>  
+        <div className="boxCart_amount">
+          25.50
+        </div>
+      </button>
     </div>
   );
 };
