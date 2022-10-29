@@ -10,6 +10,7 @@
 
     .pRight {
         width: 100%;
+        position: inherit;
     }
 
     .boxHome{
@@ -33,6 +34,7 @@
 
     .pRight {
         width: 100%;
+        position: inherit;
     }
 
     .boxHome{
@@ -56,6 +58,7 @@
 
     .pRight {
         width: 40%;
+        position: fixed;
     }
 
     .boxHome{

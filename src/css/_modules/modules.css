@@ -143,13 +143,144 @@
 
 .pRight{
   width: 40%;
+  right: 0;
 }
 
 .textDirection::before{
   content:"on the left";
 }
 
+.boxImgSelect{
+  height: 200px;
+  padding-top: 6px;
+  position: relative;
+}
 
+.boxAmount{
+ min-height: 30px;
+ min-width: 30px;
+ position: absolute;
+ top: 10px;
+ border-radius: 50%;
+ font-size: 15px;
+ box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.564);
+}
+
+.ponit{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.564);
+  vertical-align:middle;
+  margin:0 3px;
+  opacity: 0.3;
+}
+
+.boxTitleAmount{
+  height: 45px;
+  margin-top: 15px;
+}
+
+.boxOperation{
+  height: 45px;
+  padding: 10px 0;
+}
+
+.boxShop_left{
+  padding: 8px;
+  border: 1px solid #4f4f4f;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.boxShop_right{
+  padding: 10px;
+  border-top:1px solid #4f4f4f;
+  border-right:1px solid #4f4f4f;
+  border-bottom:1px solid #4f4f4f;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 40px;
+}
+
+/* From uiverse.io */
+.btnDelete {
+  color: white;
+  font-family: inherit;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  font-weight: 500;
+  background: #008fcc;
+ }
+ 
+ .btnDelete:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: white;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .btnDelete:hover {
+  color: black;
+ }
+ 
+ .btnDelete:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .btnDelete:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .btnDelete:active:before {
+  background: rgb(201, 200, 200);
+  transition: background 0s;
+ }
+ 
+
+ 
+
+
+/* .boxOperation_label:hover{
+  width:30px;
+} */
+
+.boxOperation_label {
+  position: relative;
+  padding: 10px 20px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+  background-color: #2ecc71;
+  border: none;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.222);
+  text-shadow: -1px -0.3pxrgba(0, 0, 0, 0.222);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+ }
+ 
+.boxOperation_label:active:hover, .boxOperation_label:active {
+  -webkit-transform: translate(0px,5px);
+  -ms-transform: translate(0px,5px);
+  transform: translate(0px,5px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.222);
+  opacity: 0.8;
+ }
 
 
 /* End Home */
@@ -165,9 +296,21 @@
   background: #008fcc;
 }
 
+.bg-white {
+  background: white;
+}
+
+.bg-opacity{
+  background: #929292;
+}
+
 /* color */
 .text-white {
   color: white
+}
+
+.text-black {
+  color: black
 }
 
 .text-blue{
@@ -201,8 +344,16 @@
   width: 40%;
 }
 
+.w-30 {
+  width: 30%;
+}
+
 .w-60 {
   width: 60%;
+}
+
+.w-70 {
+  width: 70%;
 }
 
 .w-100 {
@@ -232,4 +383,10 @@
 .border-radius {
   border-radius: 6px;
 }
+
+.boxHome_color{
+  border-bottom: 2px solid #008fcc58;
+}
+
+
 
