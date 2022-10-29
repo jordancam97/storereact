@@ -1,7 +1,3 @@
-.colorPru {
-  color: black
-}
-
 /* Header */
 
 .boxHeader {
@@ -26,7 +22,6 @@
   z-index: 999;
 }
 
-/* From uiverse.io */
 .button {
   display: inline-block;
   border: 1px solid #4f4f4f;
@@ -89,6 +84,51 @@
 
 .boxCart_amount {
   margin-left: 8px;
+}
+
+.btnDelete {
+  color: white;
+  font-family: inherit;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  font-weight: 500;
+  background: #008fcc;
+}
+
+.btnDelete:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: white;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.btnDelete:hover {
+  color: black;
+}
+
+.btnDelete:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+}
+
+.btnDelete:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.btnDelete:active:before {
+  background: rgb(201, 200, 200);
+  transition: background 0s;
 }
 
 /* End Header */
@@ -168,7 +208,7 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.564);
 }
 
-.boxAmount_left{
+.boxAmount_left {
   left: 7px;
 }
 
@@ -208,53 +248,6 @@
   border-bottom-right-radius: 6px;
   margin-right: 40px;
 }
-
-/* From uiverse.io */
-.btnDelete {
-  color: white;
-  font-family: inherit;
-  height: 2.6em;
-  line-height: 2.5em;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid black;
-  transition: color .5s;
-  z-index: 1;
-  font-size: 17px;
-  font-weight: 500;
-  background: #008fcc;
-}
-
-.btnDelete:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: white;
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.btnDelete:hover {
-  color: black;
-}
-
-.btnDelete:before {
-  top: 100%;
-  left: 100%;
-  transition: all .7s;
-}
-
-.btnDelete:hover:before {
-  top: -30px;
-  left: -30px;
-}
-
-.btnDelete:active:before {
-  background: rgb(201, 200, 200);
-  transition: background 0s;
-}
-
 
 .boxOperation_label {
   position: relative;
@@ -342,7 +335,7 @@
   background: red;
 }
 
-.bg-azul {
+.bg-blue {
   background: #008fcc;
 }
 

@@ -13,12 +13,12 @@
         position: inherit;
     }
 
-    .boxHome{
+    .boxHome {
         flex-direction: column;
     }
 
-    .textDirection::before{
-        content:"from above";
+    .textDirection::before {
+        content: "from above";
     }
 
     .boxHome_titleRight {
@@ -42,12 +42,12 @@
         position: inherit;
     }
 
-    .boxHome{
+    .boxHome {
         flex-direction: column;
     }
 
-    .textDirection::before{
-        content:"from above";
+    .textDirection::before {
+        content: "from above";
     }
 
     .boxHome_titleRight {
@@ -74,12 +74,12 @@
         overflow-y: auto;
     }
 
-    .boxHome{
+    .boxHome {
         flex-direction: row;
     }
 
-    .textDirection::before{
-        content:"on the left";
+    .textDirection::before {
+        content: "on the left";
     }
 
     .boxHome_titleRight {

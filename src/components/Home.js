@@ -20,14 +20,13 @@ const Home = () => {
   // asignar imagenes y texto
   const produText = (texta) => {
     // Carrito activo y mostrar producto
-    if (cart === false){
-      setCart(true)
-      setProduct(false)
-    } else{
-      setProduct(false)
+    if (cart === false) {
+      setCart(true);
+      setProduct(false);
+    } else {
+      setProduct(false);
     }
-    
-    
+
     if (texta === "alqueria") {
       setImgPro(
         <img
@@ -36,8 +35,8 @@ const Home = () => {
           alt="Product"
         />
       );
-      setTitlePro("Leche")
-    } else if (texta === "zucaritas"){
+      setTitlePro("Leche");
+    } else if (texta === "zucaritas") {
       setImgPro(
         <img
           className="objectFit w-100 h-100 "
@@ -45,8 +44,8 @@ const Home = () => {
           alt="Product"
         />
       );
-      setTitlePro("Cereales")
-    }else if (texta === "milo"){
+      setTitlePro("Cereales");
+    } else if (texta === "milo") {
       setImgPro(
         <img
           className="objectFit w-100 h-100 "
@@ -54,8 +53,8 @@ const Home = () => {
           alt="Product"
         />
       );
-      setTitlePro("Chocolate")
-    } else{
+      setTitlePro("Chocolate");
+    } else {
       setImgPro(
         <img
           className="objectFit w-100 h-100 "
@@ -63,12 +62,13 @@ const Home = () => {
           alt="Product"
         />
       );
-      setTitlePro("Papitas")
+      setTitlePro("Papitas");
     }
   };
 
   return (
     <>
+      {/* Header */}
       <div
         className={
           "headerFix boxHeader d-flex row justify-content-between align-items-center w-100"
@@ -82,15 +82,19 @@ const Home = () => {
           />
         </div>
 
+        {/* Condicional para mostrar el carrito */}
         {cart ? (
-          <a
-            href="#todos"
-            className="d-flex row boxCart border-radius align-items-center button"
-            onClick={() => proctState()}
-          >
-            <BsCart4 size={20} />
-            <div className="boxCart_amount">25.50</div>
-          </a>
+          <>
+            {/* boton carrito */}
+            <a
+              href="#todos"
+              className="d-flex row boxCart border-radius align-items-center button"
+              onClick={() => proctState()}
+            >
+              <BsCart4 size={20} />
+              <div className="boxCart_amount">25.50</div>
+            </a>
+          </>
         ) : (
           <>
             {/* boton cancelar */}
@@ -110,7 +114,9 @@ const Home = () => {
           </>
         )}
       </div>
+      {/* Home */}
       <div className="w-100 d-flex boxHome">
+        {/* Panel lateral izquierdo */}
         <div className="pLeft boxProducts">
           <div className="font-bold boxHome_title text-blue">Store</div>
           <div className="w-100 d-flex row flex-wrap">
@@ -125,7 +131,7 @@ const Home = () => {
                   src={require("../assets/img/productAlqueria.webp")}
                   alt="Product"
                 />
-                <div className="boxAmount boxAmount_left bg-azul d-flex justify-content-center align-items-center font-medium">
+                <div className="boxAmount boxAmount_left bg-blue d-flex justify-content-center align-items-center font-medium">
                   <div className="text-white">10</div>
                 </div>
               </button>
@@ -151,10 +157,7 @@ const Home = () => {
                 />
               </button>
 
-              <button
-                className="column_button"
-                onClick={() => produText()}
-              >
+              <button className="column_button" onClick={() => produText()}>
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -164,10 +167,7 @@ const Home = () => {
             </div>
 
             <div className="column">
-              <button
-                className="column_button"
-                onClick={() => produText()}
-              >
+              <button className="column_button" onClick={() => produText()}>
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -221,10 +221,7 @@ const Home = () => {
                 />
               </button>
 
-              <button
-                className="column_button"
-                onClick={() => produText()}
-              >
+              <button className="column_button" onClick={() => produText()}>
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -256,10 +253,7 @@ const Home = () => {
             </div>
 
             <div className="column">
-              <button
-                className="column_button"
-                onClick={() => produText()}
-              >
+              <button className="column_button" onClick={() => produText()}>
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -287,7 +281,7 @@ const Home = () => {
                   src={require("../assets/img/productMilo.webp")}
                   alt="Product"
                 />
-                <div className="boxAmount boxAmount_left bg-azul d-flex justify-content-center align-items-center font-medium">
+                <div className="boxAmount boxAmount_left bg-blue d-flex justify-content-center align-items-center font-medium">
                   <div className="text-white">2</div>
                 </div>
               </button>
@@ -305,6 +299,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* Panel lateral derecho */}
         <div className="pRight boxProducts boxHome_titleRight" id="todos">
           {product ? (
             <>
@@ -315,6 +310,7 @@ const Home = () => {
             </>
           ) : (
             <>
+              {/* Condiconal para ver el producto y cambiar a carrito */}
               {cart ? (
                 <>
                   <div className="font-bold boxHome_title text-blue">
@@ -323,14 +319,14 @@ const Home = () => {
                   <div className="boxImgSelect">
                     {imgPro}
 
-                    <div className="boxAmount bg-azul d-flex justify-content-center align-items-center font-medium">
+                    <div className="boxAmount bg-blue d-flex justify-content-center align-items-center font-medium">
                       <div className="text-white">10</div>
                     </div>
                   </div>
                   <div className="d-flex row boxTitleAmount">
                     <div className="d-flex row align-items-center w-60">
                       <div className="font-bold text-black ">{titlePro}</div>
-                      <div className="ponit bg-azul"></div>
+                      <div className="ponit bg-blue"></div>
                       <div className="text-blue font-bold">
                         $<span>1.50</span>
                       </div>
@@ -339,7 +335,7 @@ const Home = () => {
                       <button className="bg-opacity h-100 d-flex align-items-center justify-content-center boxOperation_label text-black font-bold">
                         -
                       </button>
-                      <button className="bg-azul h-100 d-flex align-items-center justify-content-center boxOperation_label text-white font-bold">
+                      <button className="bg-blue h-100 d-flex align-items-center justify-content-center boxOperation_label text-white font-bold">
                         +
                       </button>
                     </div>
@@ -366,7 +362,7 @@ const Home = () => {
                   </div>
                   <div className="d-flex row w-40">
                     <div className="d-flex justify-content-center align-items-center">
-                      <div className="boxAmoCart bg-azul d-flex justify-content-center align-items-center font-medium">
+                      <div className="boxAmoCart bg-blue d-flex justify-content-center align-items-center font-medium">
                         <div className="text-white">10</div>
                       </div>
                     </div>
@@ -384,7 +380,7 @@ const Home = () => {
 
                   <div className="d-flex row w-40">
                     <div className="d-flex justify-content-center align-items-center">
-                      <div className="boxAmoCart bg-azul d-flex justify-content-center align-items-center font-medium">
+                      <div className="boxAmoCart bg-blue d-flex justify-content-center align-items-center font-medium">
                         <div className="text-white">2</div>
                       </div>
                     </div>
@@ -407,6 +403,7 @@ const Home = () => {
                     </div>
                   </div>
 
+                  {/* boton de envio */}
                   <form action="https://checkout.wompi.co/p/" method="GET">
                     <input
                       type="hidden"
@@ -499,8 +496,6 @@ const Home = () => {
               )}
             </>
           )}
-
-          {/* <div className="font-bold boxHome_title text-blue">Product</div> */}
         </div>
       </div>
     </>
