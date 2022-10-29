@@ -4,15 +4,67 @@ import { BsCart4 } from "react-icons/bs";
 const Home = () => {
   const [cart, setCart] = useState(true);
   const [product, setProduct] = useState(true);
+  const [imgPro, setImgPro] = useState("");
+  const [titlePro, setTitlePro] = useState("");
 
-  const proctState = ()=>{
+  // mostrar producto en barra lateral
+  const proctState = () => {
     if (product === true) {
-      setProduct(false)
+      setProduct(false);
       setCart(false);
     } else {
-      setCart(false)
+      setCart(false);
     }
-  }
+  };
+
+  // asignar imagenes y texto
+  const produText = (texta) => {
+    if (cart === false){
+      setCart(true)
+      setProduct(false)
+    } else{
+      setProduct(false)
+    }
+    
+    
+    if (texta === "alqueria") {
+      setImgPro(
+        <img
+          className="objectFit w-100 h-100 "
+          src={require("../assets/img/productAlqueria.webp")}
+          alt="Product"
+        />
+      );
+      setTitlePro("Leche")
+    } else if (texta === "zucaritas"){
+      setImgPro(
+        <img
+          className="objectFit w-100 h-100 "
+          src={require("../assets/img/productZucaritas.webp")}
+          alt="Product"
+        />
+      );
+      setTitlePro("Cereales")
+    }else if (texta === "milo"){
+      setImgPro(
+        <img
+          className="objectFit w-100 h-100 "
+          src={require("../assets/img/productMilo.webp")}
+          alt="Product"
+        />
+      );
+      setTitlePro("Chocolate")
+    } else{
+      setImgPro(
+        <img
+          className="objectFit w-100 h-100 "
+          src={require("../assets/img/productDetodito.webp")}
+          alt="Product"
+        />
+      );
+      setTitlePro("Papitas")
+    }
+  };
 
   return (
     <>
@@ -30,30 +82,32 @@ const Home = () => {
         </div>
 
         {cart ? (
-          <button
+          <a
+            href="#todos"
             className="d-flex row boxCart border-radius align-items-center button"
             onClick={() => proctState()}
           >
             <BsCart4 size={20} />
             <div className="boxCart_amount">25.50</div>
-          </button>
+          </a>
         ) : (
-          <div className="d-flex row ">
-            <div className="d-flex bg-white row align-items-center boxShop_left">
-              <BsCart4 size={20} />
-              <div className="boxCart_amount">25.50</div>
+          <>
+            {/* boton cancelar */}
+            <div className="d-flex row ">
+              <div className="d-flex bg-white row align-items-center boxShop_left">
+                <BsCart4 size={20} />
+                <div className="boxCart_amount">25.50</div>
+              </div>
+
+              <button
+                className="d-flex align-items-center boxShop_right btnDelete"
+                onClick={() => [setCart(!cart), setProduct(!product)]}
+              >
+                <div className="">X</div>
+              </button>
             </div>
-
-            <button
-              className="d-flex align-items-center boxShop_right btnDelete"
-              onClick={() => [setCart(!cart), setProduct(!product)]}
-            >
-              <div className="">X</div>
-            </button>
-          </div>
+          </>
         )}
-
-        {/* boton cancelar */}
       </div>
       <div className="w-100 d-flex boxHome">
         <div className="pLeft boxProducts">
@@ -62,7 +116,8 @@ const Home = () => {
             <div className="column">
               <button
                 className="column_button"
-                onClick={() => setProduct(!cart)}
+                href="#todos"
+                onClick={() => produText("alqueria")}
               >
                 <img
                   className="objectFit w-100"
@@ -73,7 +128,10 @@ const Home = () => {
                   <div className="text-white">10</div>
                 </div>
               </button>
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("zucaritas")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productZucaritas.webp")}
@@ -81,7 +139,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("milo")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productMilo.webp")}
@@ -89,7 +150,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText()}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -99,7 +163,10 @@ const Home = () => {
             </div>
 
             <div className="column">
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText()}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -107,7 +174,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("alqueria")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
@@ -115,7 +185,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("milo")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productMilo.webp")}
@@ -123,7 +196,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("alqueria")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
@@ -133,7 +209,10 @@ const Home = () => {
             </div>
 
             <div className="column">
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("milo")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productMilo.webp")}
@@ -141,7 +220,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText()}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -149,7 +231,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("zucaritas")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productZucaritas.webp")}
@@ -157,7 +242,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("alqueria")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
@@ -167,7 +255,10 @@ const Home = () => {
             </div>
 
             <div className="column">
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText()}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productDetodito.webp")}
@@ -175,7 +266,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("alqueria")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
@@ -183,7 +277,10 @@ const Home = () => {
                 />
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("milo")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productMilo.webp")}
@@ -194,7 +291,10 @@ const Home = () => {
                 </div>
               </button>
 
-              <button className="column_button">
+              <button
+                className="column_button"
+                onClick={() => produText("alqueria")}
+              >
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
@@ -204,7 +304,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="pRight boxProducts boxHome_titleRight">
+        <div className="pRight boxProducts boxHome_titleRight" id="todos">
           {product ? (
             <>
               <div className="font-bold boxHome_title text-blue"></div>
@@ -220,18 +320,15 @@ const Home = () => {
                     Product
                   </div>
                   <div className="boxImgSelect">
-                    <img
-                      className="objectFit w-100 h-100 "
-                      src={require("../assets/img/productAlqueria.webp")}
-                      alt="Product"
-                    />
+                    {imgPro}
+
                     <div className="boxAmount bg-azul d-flex justify-content-center align-items-center font-medium">
                       <div className="text-white">10</div>
                     </div>
                   </div>
                   <div className="d-flex row boxTitleAmount">
                     <div className="d-flex row align-items-center w-60">
-                      <div className="font-bold text-black ">Milk</div>
+                      <div className="font-bold text-black ">{titlePro}</div>
                       <div className="ponit bg-azul"></div>
                       <div className="text-blue font-bold">
                         $<span>1.50</span>
