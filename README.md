@@ -11,7 +11,6 @@
 
 ## Surge
 
-### Link
 `storereact.surge.sh`
 
 All ready.
