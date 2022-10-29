@@ -20,6 +20,11 @@
     .textDirection::before{
         content:"from above";
     }
+
+    .boxHome_titleRight {
+        margin-top: 50px;
+    }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -44,6 +49,12 @@
     .textDirection::before{
         content:"from above";
     }
+
+    .boxHome_titleRight {
+        margin-top: 50px;
+    }
+
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -59,6 +70,8 @@
     .pRight {
         width: 40%;
         position: fixed;
+        height: calc(100vh - 130px);
+        overflow-y: auto;
     }
 
     .boxHome{
@@ -67,6 +80,10 @@
 
     .textDirection::before{
         content:"on the left";
+    }
+
+    .boxHome_titleRight {
+        margin-top: inherit;
     }
 }
 

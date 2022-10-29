@@ -3,6 +3,8 @@ import { BsCart4 } from "react-icons/bs";
 
 const Home = () => {
   const [cart, setCart] = useState(true);
+  const [product, setProduct] = useState(true);
+
 
 
 
@@ -52,12 +54,15 @@ const Home = () => {
           <div className="font-bold boxHome_title text-blue">Store</div>
           <div className="w-100 d-flex row flex-wrap">
             <div className="column">
-              <button className="column_button">
+              <button className="column_button" onClick={() => setProduct(!cart)}>
                 <img
                   className="objectFit w-100"
                   src={require("../assets/img/productAlqueria.webp")}
                   alt="Product"
                 />
+                <div className="boxAmount boxAmount_left bg-azul d-flex justify-content-center align-items-center font-medium">
+                  <div className="text-white">10</div>
+                </div>
               </button>
               <button className="column_button">
                 <img
@@ -99,6 +104,7 @@ const Home = () => {
                   src={require("../assets/img/productAlqueria.webp")}
                   alt="Product"
                 />
+
               </button>
 
               <button className="column_button">
@@ -175,6 +181,9 @@ const Home = () => {
                   src={require("../assets/img/productMilo.webp")}
                   alt="Product"
                 />
+                <div className="boxAmount boxAmount_left bg-azul d-flex justify-content-center align-items-center font-medium">
+                  <div className="text-white">2</div>
+                </div>
               </button>
 
               <button className="column_button">
@@ -361,6 +370,7 @@ const Home = () => {
                 </button>
               </form>
 
+             
             </>
           )}
           {/* <div className="font-bold boxHome_title text-blue">Product</div> */}
