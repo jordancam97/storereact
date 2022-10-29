@@ -19,6 +19,7 @@ const Home = () => {
 
   // asignar imagenes y texto
   const produText = (texta) => {
+    // Carrito activo y mostrar producto
     if (cart === false){
       setCart(true)
       setProduct(false)
